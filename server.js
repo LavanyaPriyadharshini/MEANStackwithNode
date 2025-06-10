@@ -11,6 +11,9 @@ var routes = require('./routings/routes') // now it goes from the server.js to t
 // Replace this with your actual MongoDB URL
 const dbUrl = "mongodb://localhost:27017/nodeCRUD";
 
+//install npm  i cors ,to resolve the restful api problems
+const cors = require('cors'); //to solve the cors origin error 
+
 
 // Use async/await to handle the connection, this is to check that whether the db is connected or not
 mongoose.connect(dbUrl, {
@@ -27,8 +30,11 @@ mongoose.connect(dbUrl, {
 
 
 
-//calling the below function
+//calling the below function to execute the server actions
 server.use(express.json());
+//using the routes
+server.use(routes);
+server.use(cors());
 
 
 //setting up the port
