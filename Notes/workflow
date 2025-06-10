@@ -8,6 +8,13 @@
 // 3. order of these 3 values
 
 
+flow
+
+first url route hits the controller,
+the controller contacts the service - userService.js
+service contacts with the model, 
+here the model finally communicates with the database and fetch or post or update records accordingly
+
 
 
 //always use cors first , these are middlewares

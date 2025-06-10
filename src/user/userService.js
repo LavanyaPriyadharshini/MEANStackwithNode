@@ -40,3 +40,37 @@ module.exports.createUserDBService = async (userDetails) => {
 };
 
 
+
+// update service for editing the records
+
+module.exports.updateDBRecordsService = async (userId, updateData) => {
+    try {
+        const result = await userModel.findByIdAndUpdate(
+            userId,
+            updateData,
+            { new: true } // return updated document
+        );
+        return result;
+    } catch (error) {
+        throw error;
+    }
+};
+
+
+
+//deleting the record from the collection
+
+module.exports.DeleteUserDBService = async (userId, updateData) => {
+    try {
+        const result = await userModel.findByIdAndDelete(
+            userId,
+            updateData,
+            { new: true } // return updated document
+        );
+        return result;
+    } catch (error) {
+        throw error;
+    }
+};
+
+

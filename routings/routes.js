@@ -20,5 +20,12 @@ router.route('/user/getAll').get(userController.getDataControllerfn)
 router.route('/user/create').post(userController.createUserController)
 
 
+//updating the records using id
+router.route('/user/update/:id').patch(userController.updateUserController);
+
+
+router.route('/user/delete/:id').patch(userController.updateUserController);
+
+
 //this is very important, then only you will get db started console, and the code starts executing
 module.exports = router;
