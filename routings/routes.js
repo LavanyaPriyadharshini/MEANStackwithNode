@@ -9,6 +9,16 @@ var userController = require('../src/user/userController');
 router.route('/user/getAll').get(userController.getDataControllerfn)
 //create a folder src -> user -> under this create a file userController, with the same name
 
+// STEPS OF EXECUTION
+// 1. the get method hits the user controller
+//2. in user controller it hits the service
+// 3. from the service ,the user model is called and the database gets connected
+
+
 
 //creating a user - POST method
-router.route('/user/create').get(userController.createUserController)
+router.route('/user/create').post(userController.createUserController)
+
+
+//this is very important, then only you will get db started console, and the code starts executing
+module.exports = router;

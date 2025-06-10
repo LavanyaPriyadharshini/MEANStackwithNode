@@ -3,7 +3,7 @@
 //create a schema of the database
 
 var mongoose = require('mongoose');
-var schema = mongoose.schema;
+var schema = mongoose.Schema;
 
 var userSchema = new schema({
 
@@ -22,4 +22,4 @@ var userSchema = new schema({
   
 })
 
-module.exports = mongoose.model('employees',userSchema);
+module.exports = mongoose.model('employees',userSchema); //this is the table name "employees"

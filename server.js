@@ -28,13 +28,14 @@ mongoose.connect(dbUrl, {
 });
 
 
-
+//always use cors first
+server.use(cors());
 
 //calling the below function to execute the server actions
 server.use(express.json());
 //using the routes
 server.use(routes);
-server.use(cors());
+
 
 
 //setting up the port

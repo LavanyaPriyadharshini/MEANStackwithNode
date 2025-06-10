@@ -1,0 +1,49 @@
+
+
+// step wise instructions for creating an endpoint in this
+
+// 1. create server.js ,in that mention the necessary variables for creatign a server, running the port and connecting to mongo
+// 2. the flow of the code is very important and the ordering of the code is important
+
+// 3. order of these 3 values
+
+
+
+
+//always use cors first , these are middlewares
+server.use(cors());
+
+//calling the below function to execute the server actions
+server.use(express.json());
+//using the routes
+server.use(routes);
+
+// next step is to create routes.js, give the controller names and the method correctly
+
+// nect is to create a user service 
+
+// next is to create a user model with the schema, use the property names mentioned here exactly in the postman
+
+// in one usercontroller itself i have added the two methods one for post(createUserController) and the other is for fetching and getting the datas get(getDataControllerfn)
+
+// postman
+
+// in postman we have to pass the url with the port number we mentioned and choose the post or get 
+
+// http://localhost:8000/user/getAll ------ paste this in the url section
+// select none option
+// click send
+// then you will receive the records which got inserted in the database
+
+//like wise for the post method you give this url 
+
+//http://localhost:8000/user/create ---- this is the post endpoint, 
+// choose body 
+// select raw and also selct the text type as "json"
+// and if you want you can choose the headers and give the key as "content-type and values as application/json"
+// pass the properties and values
+// click send btn
+// you will see the "user created successfully"
+// and if you check in the mongo db ,you will be able to see the records got inserted
+
+//each time run the server in the vs code using "node server.js"
